@@ -1,10 +1,11 @@
 import { directive } from '@babel/types';
 import './Metrics.css';
 import MetricItem from './MetricItem';
+import Card from '../UI/Card';
 
 const Metrics = (props) => {
   return (
-    <div className="metrics">
+    <Card className="metrics">
       <MetricItem
         userDate={props.data[0].date}
         userName={props.data[0].name}
@@ -19,7 +20,7 @@ const Metrics = (props) => {
         userCalorei={props.data[1].calorei}
         userAmount={props.data[1].amount}
       />
-    </div>
+    </Card>
   );
 };
 export default Metrics;
