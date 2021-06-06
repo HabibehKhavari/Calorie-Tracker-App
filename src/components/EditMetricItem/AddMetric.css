@@ -1,0 +1,38 @@
+.add-metric {
+  background-color: #2a9d8f;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.add-metric button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #3d6e81;
+  background-color: #264653;
+  color: white;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.add-metric button:hover,
+.add-metric button:active {
+  background-color: #264653;
+  border-color: #3d6e81;
+}
+
+.add-metric button.alternative {
+  color: #e76f51;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.add-metric button.alternative:hover,
+.add-metric button.alternative:active {
+  background-color: #264653;
+}

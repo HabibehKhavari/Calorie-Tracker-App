@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Metrics from './components/MetricItem/Metrics';
+import AddMetric from './components/EditMetricItem/AddMetric';
 
 function App() {
   const metrics = [
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <h1>Hello</h1>
+      <AddMetric />
       <Metrics data={metrics} />
     </div>
   );
