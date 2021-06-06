@@ -41,16 +41,6 @@
   border-radius: 12px;
 }
 
-.metric-item__date {
-  font-size: 1rem;
-  color: white;
-  background-color: #e9c46a;
-  border: 1px solid white;
-  padding: 0.5rem;
-  border-radius: 6px;
-  margin-right: 1rem;
-}
-
 @media (min-width: 580px) {
   .metric-item__metric {
     flex-direction: row;
