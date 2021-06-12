@@ -47,7 +47,13 @@ const DishForm = (props) => {
       description: userDescription,
     };
 
-    console.log(newDish);
+    console.log('My New Dish', newDish);
+    console.log('Resarting form data');
+    setUserName('');
+    setUserTimestamp('');
+    setUserMealtype('');
+    setUserCalories('');
+    setUserDescription('');
   };
 
   return (
