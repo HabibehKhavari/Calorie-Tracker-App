@@ -1,10 +1,10 @@
-import './AddMetric.css';
-import MetricForm from './MetricForm';
+import './AddDish.css';
+import DishForm from './DishForm';
 
 const AddMetric = (props) => {
   return (
     <div className="add-metric">
-      <MetricForm />
+      <DishForm />
     </div>
   );
 };

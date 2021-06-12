@@ -1,7 +1,7 @@
-import './MetricDate.css';
+import './DishDate.css';
 
-const MetricDate = (props) => {
-  const dispDate = props.userDate.toLocaleString('en-US', {
+const DishDate = (props) => {
+  const dispDate = props.userTimestamp.toLocaleString('en-US', {
     month: 'long',
     day: '2-digit',
     year: 'numeric',
@@ -13,4 +13,4 @@ const MetricDate = (props) => {
   return <div className="metric-item__date">{dispDate}</div>;
 };
 
-export default MetricDate;
+export default DishDate;

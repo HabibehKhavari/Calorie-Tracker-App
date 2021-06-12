@@ -1,26 +1,26 @@
 import { directive } from '@babel/types';
-import './Metrics.css';
-import MetricItem from './MetricItem';
+import './Dishes.css';
+import DishItem from './DishItem';
 import Card from '../UI/Card';
 
-const Metrics = (props) => {
+const Dishes = (props) => {
   return (
     <Card className="metrics">
-      <MetricItem
-        userDate={props.data[0].date}
+      <DishItem
+        userTimestamp={props.data[0].timestamp}
         userName={props.data[0].name}
-        userMeal={props.data[0].meal}
-        userCalorei={props.data[0].calorei}
-        userAmount={props.data[0].amount}
+        userMealtype={props.data[0].mealtype}
+        userCalories={props.data[0].calories}
+        userDescription={props.data[0].description}
       />
-      <MetricItem
-        userDate={props.data[1].date}
+      <DishItem
+        userTimestamp={props.data[1].timestamp}
         userName={props.data[1].name}
-        userMeal={props.data[1].meal}
-        userCalorei={props.data[1].calorei}
-        userAmount={props.data[1].amount}
+        userMealtype={props.data[1].mealtype}
+        userCalories={props.data[1].calories}
+        userDescription={props.data[1].description}
       />
     </Card>
   );
 };
-export default Metrics;
+export default Dishes;

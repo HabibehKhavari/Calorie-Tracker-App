@@ -1,18 +1,18 @@
-import './MetricItem.css';
-import MetricDate from './MetricDate';
+import './DishItem.css';
+import DishDate from './DishDate';
 import Card from '../UI/Card';
 
-const MetricItem = (props) => {
+const DishItem = (props) => {
   return (
     <Card className="metric-item">
       <div className="metric-item__metric">
-        <MetricDate userDate={props.userDate} />
-        <div>{props.userAmount}</div>
-        <h3>{props.userMeal}</h3>
+        <DishDate userTimestamp={props.userTimestamp} />
+        <div>{props.userDescription}</div>
+        <h3>{props.userMealtype}</h3>
         <h1>{props.userName}</h1>
       </div>
-      <div className="metric-item__count">{props.userCalorei}</div>
+      <div className="metric-item__count">{props.userCalories}</div>
     </Card>
   );
 };
-export default MetricItem;
+export default DishItem;

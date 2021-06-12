@@ -1,12 +1,12 @@
-import './MetricForm.css';
+import './DishForm.css';
 import { useState } from 'react';
 
-const MetricForm = (props) => {
-  const [userData, setUserData] = useState('');
-  const dateChangeHandler = (event) => {
+const DishForm = (props) => {
+  const [userTimestamp, setUserTimestamp] = useState('');
+  const timestampChangeHandler = (event) => {
     let newValue = event.target.value;
-    setUserData(newValue);
-    console.log(`someone typed ${userData}`);
+    setUserTimestamp(newValue);
+    console.log(`someone typed ${userTimestamp}`);
   };
 
   const [userName, setUserName] = useState('');
@@ -16,53 +16,53 @@ const MetricForm = (props) => {
     console.log(`someone typed ${userName}`);
   };
 
-  const [userMeal, setUserMeal] = useState('');
-  const mealChangeHandler = (event) => {
+  const [userMealtype, setUserMealtype] = useState('');
+  const mealtypeChangeHandler = (event) => {
     let newValue = event.target.value;
-    setUserMeal(newValue);
-    console.log(`someone typed ${userMeal}`);
+    setUserMealtype(newValue);
+    console.log(`someone typed ${userMealtype}`);
   };
 
-  const [userAmount, setUserAmount] = useState('');
-  const amountChangeHandler = (event) => {
+  const [userDescription, setUserDescription] = useState('');
+  const descriptionChangeHandler = (event) => {
     let newValue = event.target.value;
-    setUserAmount(newValue);
-    console.log(`someone typed ${userAmount}`);
+    setUserDescription(newValue);
+    console.log(`someone typed ${userDescription}`);
   };
 
-  const [userCalorei, setUserCalorei] = useState('');
-  const caloreiChangeHandler = (event) => {
+  const [userCalories, setUserCalories] = useState('');
+  const caloriesChangeHandler = (event) => {
     let newValue = event.target.value;
-    setUserCalorei(newValue);
-    console.log(`someone typed ${userCalorei}`);
+    setUserCalories(newValue);
+    console.log(`someone typed ${userCalories}`);
   };
 
   return (
     <form>
       <div className="add-metric__elements">
         <div className="add-metric__element">
-          <label>Date</label>
-          <input type="datetime-local" onChange={dateChangeHandler} />
+          <label>Timestamp</label>
+          <input type="datetime-local" onChange={timestampChangeHandler} />
         </div>
         <div className="add-metric__element">
           <label>Name</label>
           <input type="text" onChange={nameChangeHandler} />
         </div>
         <div className="add-metric__element">
-          <label>Meal</label>
-          <input type="text" onChange={mealChangeHandler} />
+          <label>Meal type</label>
+          <input type="text" onChange={mealtypeChangeHandler} />
         </div>
         <div className="add-metric__element">
-          <label>Amount</label>
-          <input type="text" onChange={amountChangeHandler} />
+          <label>Description</label>
+          <input type="text" onChange={descriptionChangeHandler} />
         </div>
         <div className="add-metric__element">
-          <label>Calorei</label>
+          <label>Calories</label>
           <input
             type="number"
             min="0"
             step="1"
-            onChange={caloreiChangeHandler}
+            onChange={caloriesChangeHandler}
           />
         </div>
       </div>
@@ -72,4 +72,4 @@ const MetricForm = (props) => {
     </form>
   );
 };
-export default MetricForm;
+export default DishForm;
