@@ -37,8 +37,21 @@ const DishForm = (props) => {
     console.log(`someone typed ${userCalories}`);
   };
 
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    const newDish = {
+      timestamp: userTimestamp,
+      name: userName,
+      mealtype: userMealtype,
+      calories: userCalories,
+      description: userDescription,
+    };
+
+    console.log(newDish);
+  };
+
   return (
-    <form>
+    <form onSubmit={onSubmitHandler}>
       <div className="add-metric__elements">
         <div className="add-metric__element">
           <label>Timestamp</label>
