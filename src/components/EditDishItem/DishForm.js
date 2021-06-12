@@ -48,6 +48,7 @@ const DishForm = (props) => {
     };
 
     console.log('My New Dish', newDish);
+    props.onAddDish(newDish);
     console.log('Resarting form data');
     setUserName('');
     setUserTimestamp('');
