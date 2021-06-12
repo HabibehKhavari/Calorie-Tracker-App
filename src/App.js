@@ -21,9 +21,13 @@ function App() {
     },
   ];
 
+  const addedDishHandler = (dish) => {
+    console.log('someone gave me a new dish to add', dish);
+  };
+
   return (
     <div>
-      <AddDish />
+      <AddDish onAddDish={addedDishHandler} />
       <Dishes data={dishes} />
     </div>
   );
