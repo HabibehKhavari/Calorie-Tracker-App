@@ -28,9 +28,7 @@ function App() {
 
   const addedDishHandler = (dish) => {
     console.log("someone gave me a new dish to add:", dish)
-    setDishes(
-      [...dishes, dish]
-    )
+    setDishes((prevDishes) => { return [...prevDishes, dish] })
     console.log('my dishes are:', dishes);
   };
 
