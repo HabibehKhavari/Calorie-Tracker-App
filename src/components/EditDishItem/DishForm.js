@@ -40,6 +40,7 @@ const DishForm = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const newDish = {
+      id: Math.random(),
       timestamp: userTimestamp,
       name: userName,
       mealtype: userMealtype,

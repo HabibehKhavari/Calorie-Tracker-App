@@ -8,6 +8,7 @@ const Dishes = (props) => {
     <Card className="metrics">
       {props.data.map((item) => {
         return <DishItem
+          key={item.id}
           userTimestamp={item.timestamp}
           userName={item.name}
           userMealtype={item.mealtype}

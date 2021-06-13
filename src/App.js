@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 const startupDishes = [
   {
+    id: 0,
     timestamp: new Date(2021, 5, 2, 13, 22, 0, 0),
     name: 'Habibeh',
     mealtype: 'Lunch',
@@ -14,6 +15,7 @@ const startupDishes = [
     description: '100gr burger',
   },
   {
+    id: 1,
     timestamp: new Date(2021, 5, 5, 10, 22, 0, 0),
     name: 'Melika',
     mealtype: 'Breakfast',
