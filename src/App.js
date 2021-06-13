@@ -27,7 +27,7 @@ const startupDishes = [
 function App() {
 
   const [dishes, setDishes] = useState(startupDishes)
-  const [startTimestamp, setStartTimestamp] = useState("")
+  const [startTimestamp, setStartTimestamp] = useState("2021-06-02")
 
   const addedDishHandler = (dish) => {
     console.log("someone gave me a new dish to add:", dish)
