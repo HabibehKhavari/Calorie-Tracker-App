@@ -6,20 +6,16 @@ import Card from '../UI/Card';
 const Dishes = (props) => {
   return (
     <Card className="metrics">
-      <DishItem
-        userTimestamp={props.data[0].timestamp}
-        userName={props.data[0].name}
-        userMealtype={props.data[0].mealtype}
-        userCalories={props.data[0].calories}
-        userDescription={props.data[0].description}
-      />
-      <DishItem
-        userTimestamp={props.data[1].timestamp}
-        userName={props.data[1].name}
-        userMealtype={props.data[1].mealtype}
-        userCalories={props.data[1].calories}
-        userDescription={props.data[1].description}
-      />
+      {props.data.map((item, index) => {
+        return <DishItem
+          userTimestamp={props.data[index].timestamp}
+          userName={props.data[index].name}
+          userMealtype={props.data[index].mealtype}
+          userCalories={props.data[index].calories}
+          userDescription={props.data[index].description}
+        />
+      })
+      }
     </Card>
   );
 };
