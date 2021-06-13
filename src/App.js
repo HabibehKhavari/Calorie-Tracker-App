@@ -27,6 +27,7 @@ const startupDishes = [
 function App() {
 
   const [dishes, setDishes] = useState(startupDishes)
+  const [startTimestamp, setStartTimestamp] = useState("")
 
   const addedDishHandler = (dish) => {
     console.log("someone gave me a new dish to add:", dish)
@@ -36,13 +37,14 @@ function App() {
 
   const newTimestampSetHandler = (startTimestamp) => {
     console.log('start timestamp set to', startTimestamp);
+    setStartTimestamp(startTimestamp)
   };
 
   return (
     <div>
       <AddDish onAddDish={addedDishHandler} />
-      <FilterDishes onSetTimestamp={newTimestampSetHandler} />
-      <Dishes data={dishes} />
+      <FilterDishes startTimestamp={startTimestamp} onSetTimestamp={newTimestampSetHandler} />
+      <Dishes filterTimestamp={startTimestamp} data={dishes} />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import DishItem from './DishItem';
 import Card from '../UI/Card';
 
 const Dishes = (props) => {
+  console.log("filtering on", props.filterTimestamp)
   return (
     <Card className="metrics">
       {props.data.map((item) => {
