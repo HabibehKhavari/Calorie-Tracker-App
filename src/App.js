@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Dishes from './components/DishItem/Dishes';
 import AddDish from './components/EditDishItem/AddDish';
+import FilterDishes from './components/FilterDishes/FilterDishes';
 
 function App() {
   const dishes = [
@@ -25,9 +26,14 @@ function App() {
     console.log('someone gave me a new dish to add', dish);
   };
 
+  const newTimestampSetHandler = (startTimestamp) => {
+    console.log('start timestamp set to', startTimestamp);
+  };
+
   return (
     <div>
       <AddDish onAddDish={addedDishHandler} />
+      <FilterDishes onSetTimestamp={newTimestampSetHandler} />
       <Dishes data={dishes} />
     </div>
   );
