@@ -1,6 +1,6 @@
 import { directive } from '@babel/types';
 import './Dishes.css';
-import DishItem from './DishItem';
+import DishesList from './DishesList';
 import Card from '../UI/Card';
 
 const Dishes = (props) => {
@@ -17,21 +17,7 @@ const Dishes = (props) => {
 
   return (
     <Card className="metrics">
-      {
-        filteredItems.length === 0
-          ?
-          <p>No data to show in this date</p>
-          :
-          filteredItems.map((item) => {
-            return <DishItem key={item.id}
-              userTimestamp={item.timestamp}
-              userName={item.name}
-              userMealtype={item.mealtype}
-              userCalories={item.calories}
-              userDescription={item.description}
-            />
-          })
-      }
+      <DishesList data={filteredItems} />
     </Card>
   );
 };
