@@ -18,16 +18,19 @@ const Dishes = (props) => {
   return (
     <Card className="metrics">
       {
-        filteredItems.map((item) => {
-          return <DishItem
-            key={item.id}
-            userTimestamp={item.timestamp}
-            userName={item.name}
-            userMealtype={item.mealtype}
-            userCalories={item.calories}
-            userDescription={item.description}
-          />
-        })
+        filteredItems.length === 0
+          ?
+          <p>No data to show in this date</p>
+          :
+          filteredItems.map((item) => {
+            return <DishItem key={item.id}
+              userTimestamp={item.timestamp}
+              userName={item.name}
+              userMealtype={item.mealtype}
+              userCalories={item.calories}
+              userDescription={item.description}
+            />
+          })
       }
     </Card>
   );
