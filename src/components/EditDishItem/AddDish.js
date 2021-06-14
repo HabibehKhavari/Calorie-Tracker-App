@@ -1,5 +1,6 @@
 import './AddDish.css';
 import DishForm from './DishForm';
+import ErrorModal from '../UI/ErrorModal'
 
 const AddMetric = (props) => {
   const addedDishHandler = (dish) => {
@@ -15,6 +16,7 @@ const AddMetric = (props) => {
 
   return (
     <div className="add-metric">
+      <ErrorModal title="An erroe occurred" message="The error is related to validation" />
       <DishForm onAddDish={addedDishHandler} />
     </div>
   );
