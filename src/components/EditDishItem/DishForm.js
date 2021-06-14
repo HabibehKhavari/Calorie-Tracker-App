@@ -39,22 +39,18 @@ const DishForm = (props) => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    if (userName.trim().length > 0 &&
-      userMealtype.trim().length > 0 &&
-      userTimestamp.trim().length > 0 &&
-      userCalories.trim().length > 0 &&
-      userDescription.trim().length > 0) {
-      const newDish = {
-        id: Math.random(),
-        timestamp: new Date(userTimestamp),
-        name: userName,
-        mealtype: userMealtype,
-        calories: userCalories,
-        description: userDescription,
-      };
 
-      console.log('My New Dish', newDish);
-      props.onAddDish(newDish);
+    const newDish = {
+      id: Math.random(),
+      timestamp: new Date(userTimestamp),
+      name: userName,
+      mealtype: userMealtype,
+      calories: userCalories,
+      description: userDescription,
+    };
+
+    console.log('My New Dish', newDish);
+    if (props.onAddDish(newDish)) {
       console.log('Resarting form data');
       setUserName("");
       setUserTimestamp("");
