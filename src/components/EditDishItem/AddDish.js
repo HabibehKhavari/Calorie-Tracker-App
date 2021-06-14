@@ -7,11 +7,20 @@ const AddMetric = (props) => {
   const [error, setError] = useState()
   const addedDishHandler = (dish) => {
     console.log('someone gave me a new dish to add', dish);
-    if (dish.name.trim().length === 0 ||
-      dish.mealtype.trim().length === 0 ||
-      dish.calories.trim().length === 0 ||
-      dish.description.trim().length === 0) {
-      setError("Error data detected.")
+    if (dish.name.trim().length === 0) {
+      setError("Name is mandatory")
+      return false;
+    }
+    if (dish.mealtype.trim().length === 0) {
+      setError("Meal type is mandatory")
+      return false;
+    }
+    if (dish.calories.trim().length === 0) {
+      setError("Calories is mandatory")
+      return false;
+    }
+    if (dish.description.trim().length === 0) {
+      setError("Description is mandatory")
       return false;
     }
 
