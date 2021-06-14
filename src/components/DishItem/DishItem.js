@@ -11,7 +11,7 @@ const DishItem = (props) => {
         <h3>{props.userMealtype}</h3>
         <h1>{props.userName}</h1>
       </div>
-      <div className="metric-item__count">{props.userCalories}</div>
+      <div className="metric-item__count">{props.userCalories} cal</div>
     </Card>
   );
 };
