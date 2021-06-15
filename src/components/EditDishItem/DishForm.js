@@ -1,5 +1,6 @@
 import './DishForm.css';
 import { useState } from 'react';
+import Input from '../UI/Input';
 
 const DishForm = (props) => {
   const [userTimestamp, setUserTimestamp] = useState('');
@@ -66,21 +67,23 @@ const DishForm = (props) => {
   return (
     <form onSubmit={onSubmitHandler}>
       <div className="add-metric__elements">
-        <div className="add-metric__element">
-          <label>Timestamp</label>
-          <input type="datetime-local" onChange={timestampChangeHandler} />
-        </div>
+        <Input className="add-metric__element"
+          id="timestamp"
+          labelText="Timestamp"
+          value={userTimestamp}
+          type="datetime-local" onChange={timestampChangeHandler} />
+
         <div className="add-metric__element">
           <label>Name</label>
-          <input type="text" onChange={nameChangeHandler} />
+          <input type="text" value={userName} onChange={nameChangeHandler} />
         </div>
         <div className="add-metric__element">
           <label>Meal type</label>
-          <input type="text" onChange={mealtypeChangeHandler} />
+          <input type="text" value={userMealtype} onChange={mealtypeChangeHandler} />
         </div>
         <div className="add-metric__element">
           <label>Description</label>
-          <input type="text" onChange={descriptionChangeHandler} />
+          <input type="text" value={userDescription} onChange={descriptionChangeHandler} />
         </div>
         <div className="add-metric__element">
           <label>Calories</label>
@@ -89,6 +92,7 @@ const DishForm = (props) => {
             min="0"
             step="1"
             onChange={caloriesChangeHandler}
+            value={userCalories}
           />
         </div>
       </div>
