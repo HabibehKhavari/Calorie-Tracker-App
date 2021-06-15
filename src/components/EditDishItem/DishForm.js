@@ -68,33 +68,53 @@ const DishForm = (props) => {
     <form onSubmit={onSubmitHandler}>
       <div className="add-metric__elements">
         <Input className="add-metric__element"
-          id="timestamp"
           labelText="Timestamp"
-          value={userTimestamp}
-          type="datetime-local" onChange={timestampChangeHandler} />
+          input={{
+            id: "timestamp",
+            type: "datetime-local",
+            value: userTimestamp,
+            onChange: timestampChangeHandler
+          }} />
 
-        <div className="add-metric__element">
-          <label>Name</label>
-          <input type="text" value={userName} onChange={nameChangeHandler} />
-        </div>
-        <div className="add-metric__element">
-          <label>Meal type</label>
-          <input type="text" value={userMealtype} onChange={mealtypeChangeHandler} />
-        </div>
-        <div className="add-metric__element">
-          <label>Description</label>
-          <input type="text" value={userDescription} onChange={descriptionChangeHandler} />
-        </div>
-        <div className="add-metric__element">
-          <label>Calories</label>
-          <input
-            type="number"
-            min="0"
-            step="1"
-            onChange={caloriesChangeHandler}
-            value={userCalories}
-          />
-        </div>
+        <Input className="add-metric__element"
+          labelText="Name"
+          input={{
+            id: "name",
+            type: "text",
+            value: userName,
+            onChange: nameChangeHandler
+          }}
+        />
+        <Input className="add-metric__element"
+          labelText="Meal type"
+          input={{
+            id: "mealtype",
+            type: "text",
+            value: userMealtype,
+            onChange: mealtypeChangeHandler
+          }}
+        />
+        <Input className="add-metric__element"
+          labelText="Description"
+          input={{
+            id: "description",
+            type: "text",
+            value: userDescription,
+            onChange: descriptionChangeHandler
+          }}
+        />
+        <Input className="add-metric__element"
+          labelText="Calories"
+          input={{
+            id: "calories",
+            min: "0",
+            step: "1",
+            type: "number",
+            value: userCalories,
+            onChange: caloriesChangeHandler
+          }}
+        />
+
       </div>
       <div className="add-metric__actions">
         <button type="submit">Add metric</button>
