@@ -4,6 +4,8 @@ import Dishes from './components/DishItem/Dishes';
 import AddDish from './components/EditDishItem/AddDish';
 import FilterDishes from './components/FilterDishes/FilterDishes';
 import { useState } from 'react';
+import Login from "./components/Login/Login"
+import Modal from './components/UI/Modal';
 
 const startupDishes = [
   {
@@ -42,6 +44,7 @@ function App() {
 
   return (
     <div>
+      {false && <Modal><Login /></Modal>}
       <AddDish onAddDish={addedDishHandler} />
       <FilterDishes startTimestamp={startTimestamp} onSetTimestamp={newTimestampSetHandler} />
       <Dishes filterTimestamp={startTimestamp} data={dishes} />

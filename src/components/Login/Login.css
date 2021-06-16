@@ -1,0 +1,38 @@
+.login {
+  background-color: #d64161;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.login button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #f4a261;
+  background-color: #e9c46a;
+  color: white;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.login button:hover,
+.login button:active {
+  background-color: #f4a261;
+  border-color: #e9c46a;
+}
+
+.login button.alternative {
+  color: #220131;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.login button.alternative:hover,
+.login button.alternative:active {
+  background-color: #f4a261;
+}
