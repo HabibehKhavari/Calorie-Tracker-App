@@ -3,6 +3,9 @@ import DishItem from "./DishItem"
 
 
 const DishesList = (props) => {
+    const onDeleteHandler = (id) => {
+        console.log("dish list... id", id)
+    }
 
     if (props.data.length === 0) {
         return <p className="metrics-list__empty">No data to show in this date</p>
@@ -14,6 +17,7 @@ const DishesList = (props) => {
             userMealtype={item.mealtype}
             userCalories={item.calories}
             userDescription={item.description}
+            onDeleteHandler={onDeleteHandler}
         />
     })
 }
