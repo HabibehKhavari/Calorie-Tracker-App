@@ -49,6 +49,17 @@
   background-color: #f5886d;
   border-color: #cc7660;
 }
+.update {
+  background-color: #264653;
+  border-color: #233f4b;
+  padding: 0.7rem;
+  border-radius: 8px;
+  color: white;
+}
+.update:hover {
+  background-color: #2e5766;
+  border-color: #264653;
+}
 
 @media (min-width: 580px) {
   .metric-item__metric {

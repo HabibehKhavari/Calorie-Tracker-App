@@ -10,7 +10,7 @@ const DishTimestamp = (props) => {
     hour12: false,
   });
 
-  return <div className="metric-item__date">{dispTimestamp}</div>;
+  return <div className="metric-item__date" contentEditable="true">{dispTimestamp}</div>;
 };
 
 export default DishTimestamp;

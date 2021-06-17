@@ -13,12 +13,13 @@ const DishItem = (props) => {
     <Card className="metric-item">
       <div className="metric-item__metric">
         <DishTimestamp userTimestamp={props.userTimestamp} />
-        <div>{props.userDescription}</div>
-        <h3>{props.userMealtype}</h3>
-        <h1>{props.userName}</h1>
+        <div contentEditable="true">{props.userDescription}</div>
+        <h3 contentEditable="true">{props.userMealtype}</h3>
+        <h1 contentEditable="true">{props.userName}</h1>
       </div>
-      <div className="metric-item__count">{props.userCalories} cal</div>
+      <div className="metric-item__count" contentEditable="true">{props.userCalories} cal</div>
       <button className="delete" onClick={deleteHadler} >Delete</button>
+      <button className="update">Update</button>
     </Card>
   );
 };
