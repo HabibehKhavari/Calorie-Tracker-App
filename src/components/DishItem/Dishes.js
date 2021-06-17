@@ -15,9 +15,13 @@ const Dishes = (props) => {
       item.timestamp.getDate() === timestamp.getDate())
   })
 
+  const deletedItem = (id) => {
+    props.onDelete(id)
+  }
+
   return (
     <Card className="metrics">
-      <DishesList data={filteredItems} />
+      <DishesList data={filteredItems} onDelete={deletedItem} />
     </Card>
   );
 };

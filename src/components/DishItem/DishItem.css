@@ -39,6 +39,17 @@
   border-radius: 12px;
 }
 
+.delete {
+  background-color: #e76f51;
+  border-color: #c36047;
+  padding: 0.7rem;
+  border-radius: 8px;
+}
+.delete:hover {
+  background-color: #f5886d;
+  border-color: #cc7660;
+}
+
 @media (min-width: 580px) {
   .metric-item__metric {
     flex-direction: row;

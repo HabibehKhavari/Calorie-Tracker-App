@@ -24,6 +24,22 @@ const startupDishes = [
     calories: '45',
     description: '100gr butter',
   },
+  {
+    id: 2,
+    timestamp: new Date(2021, 5, 2, 13, 22, 0, 0),
+    name: 'Mohammad',
+    mealtype: 'Lunch',
+    calories: '45',
+    description: '100gr burger',
+  },
+  {
+    id: 3,
+    timestamp: new Date(2021, 5, 5, 10, 22, 0, 0),
+    name: 'Emran',
+    mealtype: 'Breakfast',
+    calories: '45',
+    description: '100gr butter',
+  },
 ];
 
 function App() {
@@ -42,12 +58,20 @@ function App() {
     setStartTimestamp(startTimestamp)
   };
 
+  const deletedDish = (id) => {
+    console.log("app... id", id)
+    setDishes(dishes.filter((item) => {
+      return (
+        item.id !== id)
+    }))
+  }
+
   return (
     <div>
       {false && <Modal><Login /></Modal>}
       <AddDish onAddDish={addedDishHandler} />
       <FilterDishes startTimestamp={startTimestamp} onSetTimestamp={newTimestampSetHandler} />
-      <Dishes filterTimestamp={startTimestamp} data={dishes} />
+      <Dishes filterTimestamp={startTimestamp} data={dishes} onDelete={deletedDish} />
     </div>
   );
 }
