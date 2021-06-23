@@ -17,7 +17,7 @@ const DishForm = (props) => {
     console.log(`someone typed ${userName}`);
   };
 
-  const [userMealtype, setUserMealtype] = useState('');
+  const [userMealtype, setUserMealtype] = useState([]);
   const mealtypeChangeHandler = (event) => {
     let newValue = event.target.value;
     setUserMealtype(newValue);
@@ -90,10 +90,16 @@ const DishForm = (props) => {
           input={{
             id: "mealtype",
             type: "text",
+            list: "mealTypes",
             value: userMealtype,
             onChange: mealtypeChangeHandler
-          }}
-        />
+          }}><datalist id="mealTypes" name="mealTypes">
+            <option value="Breakfast" />
+            <option value="Lunch" />
+            <option value="Evening meal" />
+            <option value="Dinner" />
+          </datalist>
+        </Input>
         <Input className="add-metric__element"
           labelText="Description"
           input={{
