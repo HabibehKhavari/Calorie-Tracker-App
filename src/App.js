@@ -65,10 +65,15 @@ function App() {
         item.id !== id)
     }))
   }
+  const onLoginListener = (credentials) => {
+    console.log("I should authenticate ", credentials)
+  }
+
+  const isLoggedIn = false;
 
   return (
     <div>
-      {false && <Modal><Login /></Modal>}
+      {!isLoggedIn && <Modal><Login onLogin={onLoginListener} /></Modal>}
       <AddDish onAddDish={addedDishHandler} />
       <FilterDishes startTimestamp={startTimestamp} onSetTimestamp={newTimestampSetHandler} />
       <Dishes filterTimestamp={startTimestamp} data={dishes} onDelete={deletedDish} />
