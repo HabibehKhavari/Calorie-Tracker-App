@@ -67,16 +67,43 @@ function App() {
   }
   const onLoginListener = (credentials) => {
     console.log("I should authenticate ", credentials)
+    const theAuthUser = dummyAuthenticator(credentials);
+    console.log("I have an user ", theAuthUser)
+    setAuthUser(theAuthUser)
   }
 
-  const isLoggedIn = false;
+  const dummyAuthenticator = (credentials) => {
+    if (credentials.username.toUpperCase().startsWith("U")) {
+      return {
+        id: Math.random(),
+        username: credentials.username,
+        name: "Theodoris SkRt",
+        role: "user"
+      }
+    }
+    if (credentials.username.toUpperCase().startsWith("M")) {
+      return {
+        id: Math.random(),
+        username: credentials.username,
+        name: "Habibeh K",
+        role: "manager"
+      }
+    }
+    return null;
+
+  }
+
+  const [authUser, setAuthUser] = useState(null);
 
   return (
     <div>
-      {!isLoggedIn && <Modal><Login onLogin={onLoginListener} /></Modal>}
-      <AddDish onAddDish={addedDishHandler} />
-      <FilterDishes startTimestamp={startTimestamp} onSetTimestamp={newTimestampSetHandler} />
-      <Dishes filterTimestamp={startTimestamp} data={dishes} onDelete={deletedDish} />
+      {authUser == null && <Modal><Login onLogin={onLoginListener} /></Modal>}
+      {authUser !== null && <>
+        <AddDish onAddDish={addedDishHandler} />
+        <FilterDishes startTimestamp={startTimestamp} onSetTimestamp={newTimestampSetHandler} />
+        <Dishes filterTimestamp={startTimestamp} data={dishes} onDelete={deletedDish} />
+      </>
+      }
     </div>
   );
 }
