@@ -18,7 +18,7 @@ const startupDishes = [
   },
   {
     id: 1,
-    timestamp: new Date(2021, 5, 5, 10, 22, 0, 0),
+    timestamp: new Date(2021, 5, 2, 10, 22, 0, 0),
     name: 'Melika',
     mealtype: 'Breakfast',
     calories: '45',
@@ -34,11 +34,19 @@ const startupDishes = [
   },
   {
     id: 3,
-    timestamp: new Date(2021, 5, 5, 10, 22, 0, 0),
+    timestamp: new Date(2021, 5, 2, 10, 22, 0, 0),
     name: 'Emran',
     mealtype: 'Breakfast',
     calories: '45',
     description: '100gr butter',
+  },
+  {
+    id: 4,
+    timestamp: new Date(2021, 5, 2, 10, 22, 0, 0),
+    name: 'Emran',
+    mealtype: 'Dinner',
+    calories: '45',
+    description: '200gr rice',
   },
 ];
 
@@ -46,6 +54,7 @@ function App() {
 
   const [dishes, setDishes] = useState(startupDishes)
   const [startTimestamp, setStartTimestamp] = useState("2021-06-02")
+  const [searchInList, setSearchInList] = useState("")
 
   const addedDishHandler = (dish) => {
     console.log("someone gave me a new dish to add:", dish)
@@ -57,6 +66,11 @@ function App() {
     console.log('start timestamp set to', startTimestamp);
     setStartTimestamp(startTimestamp)
   };
+
+  const onSetSearchHandler = (searchInList) => {
+    console.log('start searching ...', searchInList)
+    setSearchInList(searchInList)
+  }
 
   const deletedDish = (id) => {
     console.log("app... id", id)
@@ -100,8 +114,8 @@ function App() {
       {authUser == null && <Modal><Login onLogin={onLoginListener} /></Modal>}
       {authUser !== null && <>
         <AddDish onAddDish={addedDishHandler} />
-        <FilterDishes startTimestamp={startTimestamp} onSetTimestamp={newTimestampSetHandler} />
-        <Dishes filterTimestamp={startTimestamp} data={dishes} onDelete={deletedDish} />
+        <FilterDishes startTimestamp={startTimestamp} onSetTimestamp={newTimestampSetHandler} searchInList={searchInList} onSetSearch={onSetSearchHandler} />
+        <Dishes filterTimestamp={startTimestamp} data={dishes} onDelete={deletedDish} searchInList={searchInList} />
       </>
       }
     </div>
